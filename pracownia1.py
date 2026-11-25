@@ -70,7 +70,7 @@ def testy(typ):
         # badamy zlozonosc obliczeniowa wybranej metody
         zad1.badaj_zlozonosc(
             metoda = 1,
-            opis = "Metoda ..."
+            opis = "Metoda Gaussa Jordana"
         )
     elif typ == 6:
         # porownujemy metody
@@ -78,8 +78,8 @@ def testy(typ):
         zad2 = zadanie.Zadanie()
         # badamy zlozonosc obliczeniowa wybranej metody
         zad2.porownaj_metody(
-            nazwa_metody1 = "Metoda ...",
-            nazwa_metody2 = "Metoda ..."
+            nazwa_metody1 = "Metoda Gaussa Jordana",
+            nazwa_metody2 = "Metoda Banachiewicza"
         )
         
 if __name__ == '__main__':

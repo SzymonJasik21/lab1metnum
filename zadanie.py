@@ -6,7 +6,7 @@ import gauss, gaussjordan, cholesky, banachiewicz
 import iteracjaprosta, iteracjaseidela
 
 class Zadanie:
-    def __init__(self, n = 1000, M = 10, N = 10):
+    def __init__(self, n = 200, M = 5, N = 27):
         """Konstruktor okreslajacy parametry eksperymentu"""
         self.n = n                          # maksymalny rozmiar macierzy
         self.M = M                          # liczba pomiarow
@@ -19,7 +19,23 @@ class Zadanie:
             k - rozmiar macierzy"""
         czas = 0.0
         # tworzymy obiekt klasy Uklad
-        
+        uklad1 = uklad.Uklad(k)
+        for _ in range(self.M):
+                    uklad1.losuj_uklad_symetryczny_dodatnio_okreslony()
+                    mgaussa_jordana = gaussjordan.GaussJordan(uklad1)
+                    mbanachiewicza = banachiewicz.Banachiewicz(uklad1)
+                    
+                    if metoda == 1:
+                        stoper = time.time()
+                        mgaussa_jordana.eliminacja()
+                        stoper = time.time() - stoper
+                    else:
+                        stoper = time.time()
+                        mbanachiewicza.rozklad()
+                        mbanachiewicza.rozwiaz_trojkatny_dolny()
+                        mbanachiewicza.rozwiaz_trojkatny_gorny()
+                        stoper = time.time() - stoper
+                    czas = czas + stoper
         # tworzymy petle, w ktorej bedziemy mierzyc czas rozwiazywania
         # ukladu n rownan self.pomiary razy
         
