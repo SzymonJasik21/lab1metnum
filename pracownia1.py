@@ -83,5 +83,5 @@ def testy(typ):
         )
         
 if __name__ == '__main__':
-    testy(6)
+    testy(5)
     

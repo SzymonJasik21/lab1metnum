@@ -6,7 +6,7 @@ import gauss, gaussjordan, cholesky, banachiewicz
 import iteracjaprosta, iteracjaseidela
 
 class Zadanie:
-    def __init__(self, n = 190, M = 5, N = 27): 
+    def __init__(self, n = 195, M = 5, N = 27): 
         """Konstruktor okreslajacy parametry eksperymentu"""
         self.n = n                          # maksymalny rozmiar macierzy
         self.M = M                          # liczba pomiarow
